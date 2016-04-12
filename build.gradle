@@ -1,0 +1,40 @@
+buildscript {
+    ext.kotlin_version = '1.0.1'
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.12.1"
+    }
+}
+
+group 'net.phroa.sponge'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'com.github.hierynomus.license'
+
+license {
+    header file('LICENSE_HEADER.txt')
+    strictCheck true
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.spongepowered.org/maven'
+    }
+}
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:4.+'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

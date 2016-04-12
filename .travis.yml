@@ -1,0 +1,15 @@
+language: java
+jdk:
+- oraclejdk8
+script:
+- "./gradlew -i ass"
+notifications:
+  email: false
+deploy:
+  api_key:
+    secure: oDdJTxkFFSookYWHM65LN6721ZeDVt2Hoio/xxpE+ARlgvSX9ytqyhv0w7eHOZSoDrT896fc2mt8srfmUs0R6/6Nf2DACVSTZNK479PDivWXW6VBYmCtltXCEi8JBqeLNz/y3+eN7AoRPPPgahcxUMp206NB95ZYu/0kAdetY+s+jru23E+sqJFIdFfKL3x5RvXqrkzYtExbMwauUFobCaUr4zRni5NKrNzWdQzKzGYc8f6RhQZ+3I7YN+9tuOiSQQcrjuhTutKDNCXrQzXFcety9FPK5JlPuattf9uSz5QCxjeFGA7vz0JWPr0jzNx8KjuEymMGN8kpWRSCCtLh+U1U7MDaqOAel7aN8JfpInWkPvnYje9BQdU6IKbhOXm9AmxFVfyKYe1Tguw0nrlmyj19ITYcOih0kM0n9btNUdT4clQhwLrgcP+0mvMS9qyOhaQMHkHcZtRciTI1LY5hg57y1Yvc7jfavXNLc+UZ88mf+JEJEx+PoUByOc/IcrcZhrHwppusPxwgorlKiCsHfFWM4iCLtjrBITn+T+/shNDqBlSy5Z9pZ2cP+eHmKMaM94/EaGwgyYGcSSfTewshzVXlORyA9mcA/iDQVtQocpQ5Ht0I/uEL4UeibjmMvUGhuC0/M4VQmpBt/qei2nAB1FfZNWyq/YY6CSCkntbvjAs=
+  provider: releases
+  file: build/libs/discovery-*.jar
+  file_glob: true
+  on:
+    tags: true
