@@ -25,7 +25,7 @@ Place [`discovery-xxx.jar`](https://ore-staging.spongepowered.org/phroa/Discover
 ## Commands
 
 Command | Description | Permission
--|-|-
+--------|-------------|-----------
 `/travel` | Main command. | `discovery.travel`
 `/travel <destination>` | Travel to `<destination>` if you've discovered it. | `discovery.travel`
 `/travel list` | List the regions you've discovered, or all regions if used from the console. | `discovery.list`
