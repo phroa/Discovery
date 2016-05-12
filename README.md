@@ -37,6 +37,10 @@ Command | Description | Permission
 `/travel ~ <old-name> <new-name>` | See above. | `discovery.rename`
 `/travel reload` | Replace the internal lists of regions with whatever is in the database. | `discovery.reload`
 
+## Screenshots
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/QC9SC"><a href="//imgur.com/a/QC9SC">Discovery</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 ## Contributing
 
 - Ensure your code builds, or mark the pull request as a work in progress.
