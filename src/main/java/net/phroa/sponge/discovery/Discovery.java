@@ -37,7 +37,7 @@ import org.spongepowered.api.config.DefaultConfig;
 import org.spongepowered.api.effect.sound.SoundTypes;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
-import org.spongepowered.api.event.entity.DisplaceEntityEvent;
+import org.spongepowered.api.event.entity.MoveEntityEvent;
 import org.spongepowered.api.event.filter.cause.Root;
 import org.spongepowered.api.event.game.state.GameInitializationEvent;
 import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
@@ -439,7 +439,7 @@ public class Discovery {
                         player.setLocation(world.getLocation(region.getTeleportX(), region.getTeleportY(), region.getTeleportZ()));
 
                         Vector3d position = player.getLocation().getPosition();
-                        world.playSound(SoundTypes.ENDERMAN_TELEPORT, position, 1);
+                        world.playSound(SoundTypes.ENTITY_ENDERMEN_TELEPORT, position, 1);
 
                         return CommandResult.success();
                     } else {
@@ -457,9 +457,9 @@ public class Discovery {
     }
 
     @Listener
-    public void onMove(DisplaceEntityEvent.Move event, @Root Player player) {
-        Vector3d from = event.getFromTransform().getPosition();
-        Vector3d to = event.getToTransform().getPosition();
+    public void onMove(MoveEntityEvent.Position event, @Root Player player) {
+        Vector3d from = event.getFromPosition();
+        Vector3d to = event.getToPosition();
 
         Set<Region> discovered = discoveredBy.computeIfAbsent(player.getUniqueId(), this::regionsFor);
 
